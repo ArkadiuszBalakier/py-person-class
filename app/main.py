@@ -8,7 +8,6 @@ class Person:
 
 
 def create_person_list(people: list) -> list:
-    global person_list
     Person.people.clear()
     for person_dict in people:
         person = Person(person_dict["name"], person_dict["age"])
@@ -21,6 +20,7 @@ def create_person_list(people: list) -> list:
             instance.husband = Person.people[person["husband"]]
 
         person_list = []
+
     for person_dict in people:
         person_list.append(Person.people[person_dict["name"]])
     return person_list
